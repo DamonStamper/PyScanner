@@ -1,0 +1,17 @@
+import RPi.GPIO as GPIO
+import time
+
+pin = 18
+delay = 0.25
+
+GPIO.setmode(GPIO.BOARD)
+GPIO.setwarnings(False)
+while True:
+    GPIO.setup(pin,GPIO.OUT)
+    print "LED on"
+    GPIO.output(pin,GPIO.HIGH)
+    time.sleep(delay)
+    print "LED off"
+    GPIO.output(pin,GPIO.LOW)
+
+GPIO.cleanup()
